@@ -15,6 +15,8 @@
     @<%= @user.username %>
   </h2>
 
+  <h3><%="Задано: #{@questions.count} #{suffix(@questions.count,"вопрос", "вопроса", "вопросов")}"%></h3>
+
   <div class="user-ask-button container text-center">
     <%#Используем встроенный в rails хелпер link_to%>
     <%= link_to "Спроси меня", '', class: 'button button-light', id: 'ask-button' %>
@@ -43,6 +45,7 @@
             <%= submit_tag 'Задать вопрос', class: 'button button-small button-dark' %>
           </div>
       <% end %>
+
     </div>
   </div>
 </div>
@@ -60,5 +63,6 @@
           <%= render partial: 'questions/question', object: question %>
       <% end %>
     </div>
+
   </div>
 </div>
